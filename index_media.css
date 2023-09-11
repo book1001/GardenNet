@@ -228,7 +228,8 @@
 
   .arena-project {
     top: 88px !important;
-    width: calc(100% + 20px);
+    width: 100%;
+    /* width: calc(100% + 20px); */
     height: calc(100% - 88px) !important;
     padding: 0px !important;
   }
@@ -242,7 +243,7 @@
   .scrollContents-margin {
     top: 88px;
     height: calc(100% - 88px);
-    padding: 0;
+    padding: 0 20px 0 0;
   }
 
 
@@ -260,6 +261,7 @@
 
   .col2 {
       grid-template-columns: 1fr;
+      padding-right: 20px;
   }
 
   .ppDetail {
@@ -271,6 +273,14 @@
     min-height: auto;
     margin: 0 20px 0 20px;
     transform: translate(0, 0);
+  }
+
+  .tb3-1 {
+    grid-template-columns: 45px 1fr 1fr;
+  }
+
+  .tb3-2 {
+    grid-template-columns: 45px 1fr 1fr;
   }
 
   .tb4 {
@@ -289,6 +299,11 @@
     grid-column:0;
     grid-row: 0; */
   }
+  
+  .tbW {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 @media only screen and (max-width:450px) {   /* For tablets: */

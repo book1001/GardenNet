@@ -320,7 +320,6 @@ iframe{
 }
 
 .row1 {
-  display: none;
   position: fixed;
   top: 0;
   left: 50%;
@@ -335,6 +334,10 @@ iframe{
   overflow: hidden;
   border-left: black 1px solid;
   /* background: #00c55d; */
+}
+
+#main {
+  display: block;
 }
 
 .main-scrollContents {
