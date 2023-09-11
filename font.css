@@ -97,6 +97,7 @@
 /* default ================================================ */
 
 b {
+  font-weight: normal;
   background: #000000;
   color: #ffffff;
 }
