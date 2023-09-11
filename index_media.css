@@ -1,10 +1,10 @@
 /* Responsive layout */
 /* @media only screen and (max-width:1300px) { */
-@media only screen and (max-width:800px) {
-  body {
-    background: #00c55d;
-  }
-  
+
+@media only screen and (max-width:1200px) {
+
+
+
   .row1 {
     left: 0;
     width: 100%;
@@ -13,7 +13,26 @@
     transform: translate(0, 0);
   }
 
+  .main-scrollContents {
+    top: 58px;
+    width: calc(100% - 20px);
+    height: calc(100% - 58px);
+    padding: 0;
+  }
+
+  .main-R {
+    background: transparent;
+  }
+
   .row2 {
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row3 {
     left: 0;
     width: 100%;
     padding-right: 20px;
@@ -23,15 +42,8 @@
     transform: translate(0, 0);
   }
 
-  .row3 {
-    left: 0;
-    width: 100%;
-    min-width: auto;
-    min-height: auto;
-    transform: translate(0, 0);
-  }
-
   .row4 {
+    display: none;
     left: 0;
     width: 100%;
     min-width: auto;
@@ -60,7 +72,6 @@
     height: 100%;
     padding-left: 20px;
     border: none;
-    background: #00c55d;
   }
   
 
@@ -68,18 +79,36 @@
     /* padding-top: 58px; */
     top: 58px !important;
     height: calc(100% - 58px) !important;
-    padding: 0 0 0 20px !important;
   }
 
   .scrollContents {
+    position: fixed;
     top: 58px;
     width: 100%;
     height: calc(100% - 58px);
+    overflow-y: scroll;
+  }
+  
+  .scrollContents-margin {
+    top: 58px;
+    width: calc(100% - 20px);
+    height: calc(100% - 58px);
     padding: 0;
-
   }
 
 }
+
+@media only screen and (max-width:900px) {
+  
+  .menu-top-right {
+    position: fixed;
+    top: 48px;
+    left: 20px;
+    right: auto;
+  }
+
+}
+
 
 @media only screen and (max-height:400px) {
 
@@ -141,9 +170,6 @@
 
 @media only screen and (max-width:600px) {   /* For tablets: */
 
-  body {
-    background: #00c55d;
-  }
   .menu-top-right {
     position: fixed;
     top: 48px;
@@ -158,11 +184,26 @@
     min-height: auto;
     transform: translate(0, 0);
   }
+  
+  .main-scrollContents {
+    top: 88px;
+    width: 100%;
+    height: calc(100% - 88px);
+    padding: 0;
+  }
 
+  .main-L {
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
+
+  .main-R {
+    display: none;
+  }
+  
   .row2 {
     left: 0;
-    /* width: 100%; */
-    width: calc(100% - 20px);
+    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
@@ -170,6 +211,7 @@
 
   .row3 {
     left: 0;
+    /* width: 100%; */
     width: 100%;
     min-width: auto;
     min-height: auto;
@@ -186,6 +228,7 @@
 
   .arena-project {
     top: 88px !important;
+    width: calc(100% + 20px);
     height: calc(100% - 88px) !important;
     padding: 0px !important;
   }
@@ -195,6 +238,13 @@
     height: calc(100% - 88px);
     padding: 0;
   }
+  
+  .scrollContents-margin {
+    top: 88px;
+    height: calc(100% - 88px);
+    padding: 0;
+  }
+
 
   /* .row3 {
     top: 88px;

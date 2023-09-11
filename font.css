@@ -94,6 +94,13 @@
 }
 
 
+/* default ================================================ */
+
+b {
+  background: #000000;
+  color: #ffffff;
+}
+
 /* font: menu ================================================ */
 
 .font-menu{
@@ -151,18 +158,30 @@ ul.bullet{
 
   /* margin-top: 0px;
   margin-bottom: 10px; */
-  padding-left: 40px;
+  padding-left: 20px;
+}
+
+ul.bullet li {
+  padding-bottom: 19px;
+  /* padding-bottom: 9.5px; */
 }
 
 ul.bullet li::before {
-  content: '☀︎';
-  margin-left: -40px;
-  margin-right: 26px;
+  content: '✿';
+  /* content: '☀︎'; */
+  margin-left: -20px;
+  margin-right: 8px;
   /* content: '—';
   margin-left: -36px;
   margin-right: 20px; */
   /* padding-left: -40px;
   padding-right: 10px; */
+}
+
+ul.bullet li.link::before {
+  content: '–';
+  margin-left: -20px;
+  margin-right: 8px;
 }
 
 ul.bulletG6{

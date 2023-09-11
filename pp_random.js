@@ -11,76 +11,12 @@ function ppOpen2() {
 function ppOpen3() {
   document.getElementById("ppDetail3").style.display = "block";
 }
-function ppOpen4() {
-  document.getElementById("ppDetail4").style.display = "block";
-}
-function ppOpen5() {
-  document.getElementById("ppDetail5").style.display = "block";
-}
-function ppOpen6() {
-  document.getElementById("ppDetail6").style.display = "block";
-}
-function ppOpen7() {
-  document.getElementById("ppDetail7").style.display = "block";
-}
-function ppOpen8() {
-  document.getElementById("ppDetail8").style.display = "block";
-}
-function ppOpen9() {
-  document.getElementById("ppDetail9").style.display = "block";
-}
-function ppOpen10() {
-  document.getElementById("ppDetail10").style.display = "block";
-}
-function ppOpen11() {
-  document.getElementById("ppDetail11").style.display = "block";
-}
-function ppOpen12() {
-  document.getElementById("ppDetail12").style.display = "block";
-}
-function ppOpen13() {
-  document.getElementById("ppDetail13").style.display = "block";
-}
-function ppOpen14() {
-  document.getElementById("ppDetail14").style.display = "block";
-}
-function ppOpen15() {
-  document.getElementById("ppDetail15").style.display = "block";
-}
-function ppOpen16() {
-  document.getElementById("ppDetail16").style.display = "block";
-}
-function ppOpen17() {
-  document.getElementById("ppDetail17").style.display = "block";
-}
-function ppOpen18() {
-  document.getElementById("ppDetail18").style.display = "block";
-}
-function ppOpen18() {
-  document.getElementById("ppDetail19").style.display = "block";
-}
 
 
 function ppClose() {
   document.getElementById("ppDetail1").style.display = "none";
   document.getElementById("ppDetail2").style.display = "none";
   document.getElementById("ppDetail3").style.display = "none";
-  document.getElementById("ppDetail4").style.display = "none";
-  document.getElementById("ppDetail5").style.display = "none";
-  document.getElementById("ppDetail6").style.display = "none";
-  document.getElementById("ppDetail7").style.display = "none";
-  document.getElementById("ppDetail8").style.display = "none";
-  document.getElementById("ppDetail9").style.display = "none";
-  document.getElementById("ppDetail10").style.display = "none";
-  document.getElementById("ppDetail11").style.display = "none";
-  document.getElementById("ppDetail12").style.display = "none";
-  document.getElementById("ppDetail13").style.display = "none";
-  document.getElementById("ppDetail14").style.display = "none";
-  document.getElementById("ppDetail15").style.display = "none";
-  document.getElementById("ppDetail16").style.display = "none";
-  document.getElementById("ppDetail17").style.display = "none";
-  document.getElementById("ppDetail18").style.display = "none";
-  document.getElementById("ppDetail19").style.display = "none";
 }
 
 
@@ -130,22 +66,6 @@ $(document).ready(function(){
     animateDiv('.pp1');
     animateDiv('.pp2');
     animateDiv('.pp3');
-    animateDiv('.pp4');
-    animateDiv('.pp5');
-    animateDiv('.pp6');
-    animateDiv('.pp7');
-    animateDiv('.pp8');
-    animateDiv('.pp9');
-    animateDiv('.pp10');
-    animateDiv('.pp11');
-    animateDiv('.pp12');
-    animateDiv('.pp13');
-    animateDiv('.pp14');
-    animateDiv('.pp15');
-    animateDiv('.pp16');
-    animateDiv('.pp17');
-    animateDiv('.pp18');
-    animateDiv('.pp19');
 });
 
 function makeNewPosition(){

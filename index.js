@@ -1,5 +1,8 @@
 // Menu Buttons ------------------------------------------------
 
+$('.row1').addClass('show');
+$('.menu-btn#row1').addClass('menu-btn-upsidedown');
+
 $(".menu-btn").click(function (e) {
     e.preventDefault();
 
@@ -10,18 +13,62 @@ $(".menu-btn").click(function (e) {
       var btn = btns.eq(i);
       if(btn[0] !== $(this)[0]) {
         btn.removeClass("menu-btn-upsidedown");
+        $('.row1').addClass('show');
       }
     }
 
     if($(this).hasClass("menu-btn-upsidedown")) {
       $(this).removeClass("menu-btn-upsidedown");
+      $('.row1').removeClass('show');
     }
     else {
-      $(this).addClass("menu-btn-upsidedown")
+      $(this).addClass("menu-btn-upsidedown");
+      $('.row1').removeClass('show');
     }
 
-    $('.'+this.id).slideToggle(500);
+    $('.'+this.id).slideToggle(0);
 });
+
+
+// Menu Buttons ------------------------------------------------
+
+// if ($(window).width() > 1200) {
+//   $('.menu-btn#row4').addClass('menu-btn-upsidedown');
+// }
+
+// if ($(window).width() <= 1200) {
+//   $('.menu-btn#row4').removeClass('menu-btn-upsidedown');
+// }
+
+
+// $(".menu-btn").click(function (e) {
+//     e.preventDefault();
+
+//     $('[class^=row]').not($('.'+this.id)).hide();
+
+//     var btns = $(".menu-btn");
+//     for(var i=0; i<btns.length; i++) {
+//       var btn = btns.eq(i);
+//       if(btn[0] !== $(this)[0]) {
+//         btn.removeClass("menu-btn-upsidedown");
+//       }
+//     }
+
+//     if($(this).hasClass("menu-btn-upsidedown")) {
+//       $(this).removeClass("menu-btn-upsidedown");
+//     }
+//     else {
+//       $(this).addClass("menu-btn-upsidedown");
+//     }
+
+//     $('.'+this.id).slideToggle(500);
+// });
+
+
+
+// ------------------------------------------------
+
+
 
 // function menuSyllabus() {
 //   if (document.getElementById("row1").style.transform === "scaleY(-1)") {
