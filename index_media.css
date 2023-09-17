@@ -6,7 +6,6 @@
 
 
   .row1 {
-    left: 0;
     width: 100%;
     min-width: auto;
     min-height: auto;
@@ -27,7 +26,6 @@
   }
 
   .row2 {
-    left: 0;
     width: 100%;
     min-width: auto;
     min-height: auto;
@@ -36,7 +34,6 @@
   }
 
   .row3 {
-    left: 0;
     width: 100%;
     padding-right: 20px;
     /* width: calc(100% - 20px); */
@@ -48,7 +45,6 @@
 
   .row4 {
     display: none;
-    left: 0;
     width: 100%;
     min-width: auto;
     min-height: auto;
@@ -183,8 +179,6 @@
   }
 
   .row1 {
-    left: 0;
-    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
@@ -207,25 +201,18 @@
   }
   
   .row2 {
-    left: 0;
-    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
   }
 
   .row3 {
-    left: 0;
-    /* width: 100%; */
-    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
   }
 
   .row4 {
-    left: 0;
-    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
