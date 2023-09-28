@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+    * {
+      cursor: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: black;
+      opacity: .3;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      /* transition: width .3s, height .3s, opacity .3s; */
+    }
+
+    .hover {
+      background-color: red;
+      opacity: 0.5;
+    }
+  </style>
+
+  <section>
+    <h1>Custom Cursor</h1>
+    <a href="#">Hover Me</a>
+  </section>
+  <div class="cursor"></div>
+
+  <script>
+    var cursorinner = document.querySelector('.cursor');
+    var a = document.querySelectorAll('a');
+
+    document.addEventListener('mousemove', function(e){
+      var x = e.clientX;
+      var y = e.clientY;
+      cursorinner.style.left = x + 'px';
+      cursorinner.style.top = y + 'px';
+    });
+
+    document.addEventListener('mousedown', function(){
+      cursorinner.classList.add('click');
+    });
+
+    document.addEventListener('mouseup', function(){
+      cursorinner.classList.remove('click')
+    });
+
+    a.forEach(item => {
+      item.addEventListener('mouseover', () => {
+        cursorinner.classList.add('hover');
+      });
+      item.addEventListener('mouseleave', () => {
+        cursorinner.classList.remove('hover');
+      });
+    })
+  </script>
+</body>
+</html>
