@@ -7,63 +7,78 @@
 </head>
 <body>
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
     * {
       cursor: none;
-      margin: 0;
+      /* margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      box-sizing: border-box; */
     }
 
     .cursor {
+      position: fixed;
+      pointer-events: none;
       width: 20px;
       height: 20px;
-      background: url("https://gardeninthe.net/img/test.png");
-      /* border-radius: 100%; */
-      position: fixed;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      /* transition: width .3s, height .3s, opacity .3s; */
+      /* background: url("https://gardeninthe.net/img/test.png"); */
+      background-position: center;
+      background-repeat: no-repeat; 
+      background-size: 100% 100%;
     }
 
     .hover {
-      background-color: red;
-      opacity: 0.5;
+      position: fixed;
+      pointer-events: none;
+      width: 20px;
+      height: 20px;
+      background: url("https://gardeninthe.net/img/test-hover.png") !important;
+      background-position: center;
+      background-repeat: no-repeat; 
+      background-size: 100% 100%;
     }
   </style>
 
-  <section>
-    <h1>Custom Cursor</h1>
-    <a href="#">Hover Me</a>
-  </section>
+  <a href="#">Hover</a>
   <div class="cursor"></div>
 
   <script>
-    var cursorinner = document.querySelector('.cursor');
+    var cursorbg = document.querySelector('.cursor');
     var a = document.querySelectorAll('a');
+    var aBtn = document.querySelectorAll('.aBtn');
 
     document.addEventListener('mousemove', function(e){
       var x = e.clientX;
       var y = e.clientY;
-      cursorinner.style.left = x + 'px';
-      cursorinner.style.top = y + 'px';
+      cursorbg.style.left = x + 'px';
+      cursorbg.style.top = y + 'px';
     });
 
     document.addEventListener('mousedown', function(){
-      cursorinner.classList.add('click');
+      cursorbg.classList.add('click');
     });
 
     document.addEventListener('mouseup', function(){
-      cursorinner.classList.remove('click')
+      cursorbg.classList.remove('click')
     });
 
     a.forEach(item => {
       item.addEventListener('mouseover', () => {
-        cursorinner.classList.add('hover');
+        cursorbg.classList.add('hover');
+        cursorbg.classList.remove('cursor');
       });
       item.addEventListener('mouseleave', () => {
-        cursorinner.classList.remove('hover');
+        cursorbg.classList.remove('hover');
+        cursorbg.classList.add('cursor');
+      });
+    })
+
+    aBtn.forEach(item => {
+      item.addEventListener('mouseover', () => {
+        cursorbg.classList.add('hover');
+        cursorbg.classList.remove('cursor');
+      });
+      item.addEventListener('mouseleave', () => {
+        cursorbg.classList.remove('hover');
+        cursorbg.classList.add('cursor');
       });
     })
   </script>
