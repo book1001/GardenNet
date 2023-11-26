@@ -1,72 +1,47 @@
-// pp: Detail Open/Close ------------------------------------------------
-
-function ppOpen1() {
-  document.getElementById("ppDetail1").style.display = "block";
-  document.getElementById("ppDetail2").style.display = "none";
-}
-function ppOpen2() {
-  document.getElementById("ppDetail2").style.display = "block";
-  document.getElementById("ppDetail1").style.display = "none";
-}
-function ppOpen3() {
-  document.getElementById("ppDetail3").style.display = "block";
-}
-
-
-function ppClose() {
-  document.getElementById("ppDetail1").style.display = "none";
-  document.getElementById("ppDetail2").style.display = "none";
-  document.getElementById("ppDetail3").style.display = "none";
-}
-
-
-
-
-// Door: Open/Close ------------------------------------------------
-
-// $(".open-door").click(function () {
-//             $(this).text(function(i, v){
-//                return v === 'Open The Door' ? 'Close           The Door' : 'Open The Door'
-//             })
-//         });
-
-
-$("#openDoor").click(function() {
-  $(this).text("\u00a0");
-    // $(this).text("Close \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 The Door");
-});
-
 // pp: Random Moving Div ------------------------------------------------
 
-// $(document).ready(function(){
-//   $("#openDoor").click(function(){
-//     animateDiv('.pp1');
-//     animateDiv('.pp2');
-//     animateDiv('.pp3');
-//     animateDiv('.pp4');
-//     animateDiv('.pp5');
-//     animateDiv('.pp6');
-//     animateDiv('.pp7');
-//     animateDiv('.pp8');
-//     animateDiv('.pp9');
-//     animateDiv('.pp10');
-//     animateDiv('.pp11');
-//     animateDiv('.pp12');
-//     animateDiv('.pp13');
-//     animateDiv('.pp14');
-//     animateDiv('.pp15');
-//     animateDiv('.pp16');
-//     animateDiv('.pp17');
-//     animateDiv('.pp18');
-//     animateDiv('.pp19');
-//   });
-// });
+let origElementPool = [
+  '.pp1', 
+  '.pp2', 
+  '.pp3', 
+  '.pp4', 
+  '.pp5',
+  '.pp6', 
+  '.pp7', 
+  '.pp8', 
+  '.pp9', 
+  '.pp10',
+  '.pp11', 
+  '.pp12', 
+  '.pp13', 
+  '.pp14', 
+  '.pp15',
+  '.pp16',
+  '.pp17'
+];
+
+let currElementPool;
 
 $(document).ready(function(){
-    animateDiv('.pp1');
-    animateDiv('.pp2');
-    animateDiv('.pp3');
+  shuffleArray(origElementPool);
+    
+  currElementPool = [...origElementPool];
+  
+  for(let i=0; i<3; i++) {
+    if(currElementPool.length > 0) {
+      console.log("init");
+      animateDiv(currElementPool[0]);
+      currElementPool.shift(); // remove currElementPool[0] in currElementPool array
+    }
+  }
 });
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 function makeNewPosition(){
     // Get viewport dimensions (remove the dimension of the div)
@@ -80,27 +55,45 @@ function makeNewPosition(){
 }
 
 function animateDiv(myclass){
+    console.log("animateDiv");
     var newq = makeNewPosition();
     var oldq = $(myclass).offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
 
     // $(myclass).css("display", "block");
     $(myclass).css("pointer-events", "auto");
-    $(myclass).animate({ top: newq[0], left: newq[1] }, speed,   function(){
+    $(myclass).animate({ top: newq[0], left: newq[1] }, speed, function(){
       animateDiv(myclass);
       $(myclass).css("display", "block");
     });
 
     $(myclass).hover(function() {
         $(this).stop();
-        $(this).children().css("display", "block");
-    },
-    function() {
-      $(this).children().css("display", "block");
-      // $(myclass).animate({ top: newq[0], left: newq[1] }, speed,   function(){
-      //   animateDiv(myclass);
-      // });
+        $(this).children().css("opacity", "1");
     });
+    $(myclass).off("click").click(function () {
+      var $this = $(this);
+      $this.css("display", "none");
+      $this.children().css("opacity", "");
+      
+      // create new element
+      if(currElementPool.length == 0) {
+        shuffleArray(origElementPool);
+    
+        currElementPool = [...origElementPool];
+        currElementPool = currElementPool.filter(function(element) {
+            return !$(element).hasClass($this[0].classList[0]) && $(element).css("display") !== "block";
+        });
+      }
+      
+      console.log($this[0].classList[0] + " clicked");
+      if($(currElementPool[0]).children().css("opacity") == 1) {
+        console.log("opacity");
+        $(currElementPool[0]).children().css("opacity", "");
+      }
+      animateDiv(currElementPool[0]);
+      currElementPool.shift();
+   });
 };
 
 

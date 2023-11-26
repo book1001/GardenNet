@@ -101,6 +101,7 @@ function animateDiv(myclass){
       // $(myclass).animate({ top: newq[0], left: newq[1] }, speed,   function(){
       //   animateDiv(myclass);
       // });
+      animateDiv(myclass);
     });
 };
 
