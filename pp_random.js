@@ -17,7 +17,11 @@ let origElementPool = [
   '.pp14', 
   '.pp15',
   '.pp16',
-  '.pp17'
+  '.pp17',
+  '.pp18',
+  '.pp19',
+  '.pp20',
+  '.pp21'
 ];
 
 let currElementPool;
